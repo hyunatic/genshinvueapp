@@ -11,6 +11,11 @@ const routes = [
     name: "character",
     component: () => import("../views/Character.vue"),
   },
+  {
+    path: "/artifact",
+    name: "artifact",
+    component: () => import("../views/Artifacts.vue"),
+  },
 ];
 
 const router = createRouter({

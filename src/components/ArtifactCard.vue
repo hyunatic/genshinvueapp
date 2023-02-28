@@ -1,10 +1,10 @@
 <template>
   <MDBCard class="mb-1">
-    <MDBCardImg :src="charDetails.images.icon" top alt="..." />
+    <MDBCardImg :src="artifactDetails.images.flower" top alt="..." />
     <MDBCardBody>
-      <MDBCardTitle>{{ charDetails.name }}</MDBCardTitle>
+      <MDBCardTitle>{{ artifactDetails.name }}</MDBCardTitle>
       <MDBCardText>
-        {{ charDetails.title }}
+        {{ artifactDetails.title }}
       </MDBCardText>
       <MDBBtn tag="a" href="#!" color="primary">View</MDBBtn>
     </MDBCardBody>
@@ -31,19 +31,21 @@ export default {
     MDBBtn,
   },
   props: {
-    charName: String,
+    artifact: String,
   },
   data() {
     return {
-      charDetails: {},
+      artifactDetails: {},
     };
   },
   created() {
-    this.getCharDetails();
+    this.getArtifactDetails();
   },
   methods: {
-    getCharDetails() {
-      this.charDetails = genshindb.characters(this.charName);
+    getArtifactDetails() {
+      this.artifactDetails = genshindb.artifacts(this.artifact, {
+        verboseCategories: true,
+      });
     },
   },
 };

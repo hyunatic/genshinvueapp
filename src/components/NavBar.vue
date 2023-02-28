@@ -5,7 +5,7 @@
     <MDBNavbarNav collapse="navbarNav">
       <MDBNavbarItem to="/" active>Home</MDBNavbarItem>
       <MDBNavbarItem to="/character"> Characters </MDBNavbarItem>
-      <MDBNavbarItem to="#"> Artifacts </MDBNavbarItem>
+      <MDBNavbarItem to="/artifact"> Artifacts </MDBNavbarItem>
     </MDBNavbarNav>
   </MDBNavbar>
 </template>

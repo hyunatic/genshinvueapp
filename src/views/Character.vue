@@ -1,9 +1,9 @@
 <template>
   <NavBar />
-  <MDBContainer>
+  <MDBContainer class="mt-3">
     <MDBRow>
       <MDBCol v-for="charName in charList" :key="charName" md="2">
-        <CharacterCard :charDetails="charName" />
+        <CharacterCard :charName="charName" />
       </MDBCol>
     </MDBRow>
   </MDBContainer>
