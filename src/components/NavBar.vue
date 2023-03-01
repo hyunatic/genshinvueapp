@@ -6,6 +6,7 @@
       <MDBNavbarItem to="/" active>Home</MDBNavbarItem>
       <MDBNavbarItem to="/character"> Characters </MDBNavbarItem>
       <MDBNavbarItem to="/artifact"> Artifacts </MDBNavbarItem>
+      <MDBNavbarItem to="/search"> Search </MDBNavbarItem>
     </MDBNavbarNav>
   </MDBNavbar>
 </template>

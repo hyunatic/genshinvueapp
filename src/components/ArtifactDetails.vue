@@ -16,7 +16,7 @@
       <MDBTabItem :wrap="false" tabId="ex4-5" href="ex4-5"
         >Goblet of Eonothem</MDBTabItem
       >
-      <MDBTabItem :wrap="false" tabId="ex4-5" href="ex4-6"
+      <MDBTabItem :wrap="false" tabId="ex4-6" href="ex4-6"
         >Circlet of Logos</MDBTabItem
       >
     </MDBTabNav>
@@ -65,21 +65,80 @@
               <MDBCardBody>
                 <MDBCardTitle>{{ artifactDetails.plume.name }}</MDBCardTitle>
                 <MDBCardText>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </MDBCardText>
-                <MDBCardText>
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                  <p class="h4">Story</p>
+                  <p>{{ artifactDetails.plume.story }}</p>
                 </MDBCardText>
               </MDBCardBody>
             </MDBCol>
           </MDBRow>
         </MDBCard>
       </MDBTabPane>
-      <MDBTabPane tabId="ex4-4">Tab 3 content</MDBTabPane>
-      <MDBTabPane tabId="ex4-5">Tab 3 content</MDBTabPane>
-      <MDBTabPane tabId="ex4-6">Tab 3 content</MDBTabPane>
+      <MDBTabPane tabId="ex4-4">
+        <MDBCard class="mb-3">
+          <MDBRow class="g-0">
+            <MDBCol md="4">
+              <img
+                class="img-fluid"
+                :src="artifactDetails.images.sands"
+                alt=""
+              />
+            </MDBCol>
+            <MDBCol md="8">
+              <MDBCardBody>
+                <MDBCardTitle>{{ artifactDetails.sands.name }}</MDBCardTitle>
+                <MDBCardText>
+                  <p class="h4">Story</p>
+                  <p>{{ artifactDetails.sands.story }}</p>
+                </MDBCardText>
+              </MDBCardBody>
+            </MDBCol>
+          </MDBRow>
+        </MDBCard>
+      </MDBTabPane>
+      <MDBTabPane tabId="ex4-5">
+        <MDBCard class="mb-3">
+          <MDBRow class="g-0">
+            <MDBCol md="4">
+              <img
+                class="img-fluid"
+                :src="artifactDetails.images.goblet"
+                alt=""
+              />
+            </MDBCol>
+            <MDBCol md="8">
+              <MDBCardBody>
+                <MDBCardTitle>{{ artifactDetails.goblet.name }}</MDBCardTitle>
+                <MDBCardText>
+                  <p class="h4">Story</p>
+                  <p>{{ artifactDetails.goblet.story }}</p>
+                </MDBCardText>
+              </MDBCardBody>
+            </MDBCol>
+          </MDBRow>
+        </MDBCard>
+      </MDBTabPane>
+      <MDBTabPane tabId="ex4-6">
+        <MDBCard class="mb-3">
+          <MDBRow class="g-0">
+            <MDBCol md="4">
+              <img
+                class="img-fluid"
+                :src="artifactDetails.images.circlet"
+                alt=""
+              />
+            </MDBCol>
+            <MDBCol md="8">
+              <MDBCardBody>
+                <MDBCardTitle>{{ artifactDetails.circlet.name }}</MDBCardTitle>
+                <MDBCardText>
+                  <p class="h4">Story</p>
+                  <p>{{ artifactDetails.circlet.story }}</p>
+                </MDBCardText>
+              </MDBCardBody>
+            </MDBCol>
+          </MDBRow>
+        </MDBCard>
+      </MDBTabPane>
     </MDBTabContent>
   </MDBTabs>
 </template>

@@ -1,7 +1,18 @@
 <template>
   <NavBar />
+
   <MDBContainer class="mt-3">
-    <MDBRow v-for="artifact in artifactList" :key="artifact">
+    <MDBRow class="mb-3">
+      <MDBCol md="12">
+        <MDBInput
+          @keydown="searchArtifacts"
+          v-model="searchText"
+          label="Search Character"
+        />
+      </MDBCol>
+    </MDBRow>
+
+    <MDBRow v-for="artifact in buffer" :key="artifact">
       <MDBCol md="2">
         <ArtifactCard :artifact="artifact" />
       </MDBCol>
@@ -13,7 +24,7 @@
 </template>
 
 <script>
-import { MDBCol, MDBRow, MDBContainer } from "mdb-vue-ui-kit";
+import { MDBCol, MDBRow, MDBContainer, MDBInput, MDBBtn } from "mdb-vue-ui-kit";
 import NavBar from "../components/NavBar.vue";
 import ArtifactCard from "../components/ArtifactCard.vue";
 import ArtifactDetails from "../components/ArtifactDetails.vue";
@@ -24,6 +35,8 @@ export default {
     NavBar,
     MDBCol,
     MDBRow,
+    MDBInput,
+    MDBBtn,
     MDBContainer,
     ArtifactCard,
     ArtifactDetails,
@@ -31,10 +44,21 @@ export default {
   data() {
     return {
       artifactList: [],
+      buffer: [],
+      searchText: "",
     };
   },
   mounted() {
     this.artifactList = genshindb.artifacts("5", { matchCategories: true });
+    this.buffer = this.artifactList;
+  },
+  methods: {
+    searchArtifacts() {
+      this.buffer = this.artifactList.filter((x) =>
+        x.toLowerCase().includes(this.searchText)
+      );
+      if (this.searchText.length == 0) this.buffer = this.artifactList;
+    },
   },
 };
 </script>

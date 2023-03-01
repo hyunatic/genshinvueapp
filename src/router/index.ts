@@ -16,6 +16,11 @@ const routes = [
     name: "artifact",
     component: () => import("../views/Artifacts.vue"),
   },
+  {
+    path: "/search",
+    name: "search",
+    component: () => import("../views/Search.vue"),
+  },
 ];
 
 const router = createRouter({
